@@ -1,39 +1,17 @@
-// Select the image element
-const img = document.querySelector('img');
-const p = document.querySelector('p');
+const books = document.querySelectorAll('.book.highlight');
+    const contents = document.querySelectorAll('.content');
 
-// Set initial position and velocity
-let posX = 0;
-let posY = 0;
-let velocityX = 5;
-let velocityY = 6;
+    books.forEach(book => {
+      book.addEventListener('click', () => {
+        // Reset others
+        books.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
 
-// Function to move the image
-function moveImage() {
-    const containerWidth = window.innerWidth;
-    const containerHeight = window.innerHeight;
-    const imgWidth = img.offsetWidth;
-    const imgHeight = img.offsetHeight;
+        // Activate clicked book
+        book.classList.add('active');
 
-    // Update position
-    posX += velocityX;
-    posY += velocityY;
-
-    // Check for collisions with walls
-    if (posX + imgWidth > containerWidth || posX < 0) {
-        velocityX *= -1; // Reverse direction
-    }
-    if (posY + imgHeight > containerHeight || posY < 0) {
-        velocityY *= -1; // Reverse direction
-    }
-
-    // Apply new position
-    img.style.transform = `translate(${posX}px, ${posY}px)`;
-    p.style.transform = `translate(${posX}px, ${posY}px)`;
-
-    // Request the next frame
-    requestAnimationFrame(moveImage);
-}
-
-// Start the animation
-moveImage();
+        // Show associated content
+        const targetId = book.getAttribute('data-content');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
