@@ -27,7 +27,7 @@
             <div class="shelf">
 
                 <div class="book short thick" style="background: lightblue;"></div>
-                <div class="book tall wide" style="background: red";"></div>
+                <div class="book tall wide" style="background: orange";"></div>
                 <div class="book short thick interactive" style="background: linear-gradient(to right, red, green);" data-content="temporary"><span>title</span></div>
                 <div class="book medium thick" style="background: lightgreen;"></div>
                 <div class="book short thick" style="background: lightcoral;"></div>
@@ -50,7 +50,7 @@
                 <div class="book short narrow" style="background: white;"></div>
                 <div class="book medium wide" style="background: pink;"></div>
                 <div class="book short thick" style="background: black;"></div>
-                <div class="book tall thick" style="background: yellow;"></div>
+                <div class="book tall thick interactive" style="background: linear-gradient(to bottom, pink, orange);" data-content="Connections"><span>Connections</span></div>
 
             </div>
 
@@ -60,7 +60,7 @@
                 <div class="book medium narrow" style="background: black"></div>
                 <div class="book tall wide" style="background: white"></div>
                 <div class="book medium thick" style="background: lightgreen;"></div>
-                <div class="book short thick" style="background: lightcoral;"></div>
+                <div class="book short thick interactive" style="background: linear-gradient(to top, yellow, red);" data-content="Projects"><span>Projects</span></div>
                 <div class="book medium narrow" style="background: lightgray;"></div>
                 <div class="book short narrow" style="background: white;"></div>
                 <div class="book medium wide" style="background: pink;"></div>
@@ -69,23 +69,48 @@
 
             </div>
 
-
         </div>
 
         <!-- Content of interactive books -->
         <div id="about me" class="content"> 
-            <button class="close-btn">&times;</button>
-            <h2>About Me</h2>
-            <p>hi hi hi hi hi</p>
+            <div class="page page-left">
+                <h2>About Me</h2>
+                <p>hi hi hi hi hi</p>
+
+            </div>
+            <div class="page page-right">
+                <button class="close-btn">&times;</button>
+
+            </div>
         </div>
         <div id="temporary" class="content">
+            <div class="page page-left">
+                <h2>Temporary Title</h2>
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUydnJpOXRxY2N2NHZuaWQwcjFlaHBrZnR6cGlqcDYzdTM1M2g5c3JzayZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/KrR3B1YUWW2jnvgeEa/giphy-preview.gif" alt="Aphelios">
+            </div>
+            <div class="page page-right">
+                <button class="close-btn">&times;</button>
+            </div>
+        </div>
+        <div id="Connections" class="content">
+            <div class="page page-left">
+                <h2>Connections</h2>
+                <p>You can find me on:</p>
+            </div>
+            <div class="page page-right">
             <button class="close-btn">&times;</button>
-            <h2>Temporary Title</h2>
-            <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUydnJpOXRxY2N2NHZuaWQwcjFlaHBrZnR6cGlqcDYzdTM1M2g5c3JzayZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/KrR3B1YUWW2jnvgeEa/giphy-preview.gif" alt="Aphelios">
+            </div>
+        </div>
+        <div id="Projects" class="content">
+            <div class="page page-left">
+                <h2>My Projects</h2>
+            </div>
+            <div class="page page-right">
+                <button class="close-btn">&times;</button>
+            </div>
         </div>
 
-        
-        <!-- Footer -->
+    <!-- Footer -->
     <div class="footer"></div>
     </div>
     <script src="script.js"></script>

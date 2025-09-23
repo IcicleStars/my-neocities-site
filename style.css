@@ -1,7 +1,27 @@
+/* Global Variables */
+:root { 
+    /* Primary Palette */
+    --parchment: #e5d3b3;
+    --leather: #c29b87;
+    --oak: #a97854;
+    --manuscript: #1e423f;
+    --binding: #532c2e;
+    --crimson: #34000b;
+    
+    /* analagous palette (FOR BOOKS */
+    --book1: #5c334f;
+    --book2: #5c333a;
+    --book4: #5c4033;
+    --book5: #5c5533;
+    --book6: #4f6c35;
+
+
+}
+
 body { 
     margin: 0;
     font-family: "Georgia", serif;
-    background: #f4f1ee;
+    background: var(--parchment);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +115,7 @@ body {
 }
 
 .book.interactive:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .book span {
@@ -140,12 +160,6 @@ body {
 
 .content {
 
-    /* Content and Self Positioning */
-    top: 50%;
-    position: fixed;
-    left: 50%;
-    max-width: 500px;
-    
     /* Order */
     display: none;
     z-index: 100;
@@ -153,16 +167,25 @@ body {
     /* Spacing, Size, and Layout*/
     margin-top: 20px;
     padding: 20px;
-    background: #E0D3AF;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-
+    background: url('images/open-book.png') center/contain no-repeat;
+    width: 530px;
+    height: 400px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 5px 20px rgba(0,0,0,0.3); */
+    
     /* Animations!!!! */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
     animation: fadeIn 0.5s ease forwards 0.25s;
+
+    /* Content and Self Positioning */
+    top: calc(50% - 200px);
+    position: fixed;
+    left: calc(50% - 250px);
+    max-width: 500px;
 }
+
 
 .content.active {
     display: block;
@@ -183,6 +206,24 @@ body {
 @keyframes fadeIn { 
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0px); }
+}
+
+.page {
+  position: absolute;
+  top: 5%;   /* push down from top of page */
+  bottom: 5%;/* keep inside book margins */
+  padding: 5px;
+  overflow-y: auto; /* allows scrolling if text overflows */
+}
+
+.page-left {
+  left: 7.5%;
+  width: 42.5%; /* left half of book */
+}
+
+.page-right {
+  right: 7.5%;
+  width: 42.5%; /* right half of book */
 }
 
 .close-btn {
